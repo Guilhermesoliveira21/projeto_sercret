@@ -1,49 +1,62 @@
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
+  position: relative;
 
+  width: 100%;
+  max-width: 430px;
+
+  margin: -70px auto;
+
+  overflow: hidden;
+
+  .container_title {
     position: absolute;
-    top: -16px;
-    left: 0;
 
-    .container_title {
-      /* background-color: aqua; */
-      z-index: 99999;
+    top: 120px;
+    left: -50px;
 
-      padding: 0 1rem;
+    z-index: 10;
 
-      position: absolute;
-      top: 140px;
+    width: 100%;
+
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 3rem;
 
       font-style: italic;
-      font-weight: 900;
+      font-weight: 800;
 
-      width: 100%;
+      color: #ffeced;
 
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: start;
-      
-      h1 {
-        font-size: 3.2rem;
-        color: #FFECED;
-        font-weight: 700;
-
-        span {
-          color: #FFB2BB;
-        }
-      }
-
-      p {
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: #FFB2BB;
-        margin-left: 80px;
-        margin-top: 16px;
+      span {
+        color: #ffb2bb;
       }
     }
 
+    p {
+      font-size: clamp(0.94rem, 3vw, 1rem);
+
+      font-style: italic;
+      font-weight: 500;
+
+      color: #ffb2bb;
+
+      max-width: clamp(200px, 70vw, 260px);
+
+      margin-left: auto;
+
+      margin-top: 12px;
+
+      text-align: right;
+
+      line-height: 1.5;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -54,8 +67,10 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  height: 100%;
+  height: 720px;
+
   object-fit: cover;
+
   display: block;
 `;
 
@@ -63,29 +78,32 @@ export const Overlay = styled.div`
   position: absolute;
   inset: 0;
 
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgb(0 0 0 / 42%), #000000bd);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgb(0 0 0 / 42%),
+    #000000bd
+  );
 `;
 
 export const HeroContainerCard = styled.div`
+  width: 100%;
 
-    z-index: 999;
+  margin-top: -200px;
 
-    position: absolute;
-    bottom: -6%;
-    left: 0;
-    width: 100%;
+  position: relative;
 
-    padding: 0 0rem;
+  z-index: 20;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
+  padding: 0 1rem;
 
+  /* background-color: aquamarine; */
 `;
 
 export const ContainerCard = styled.div`
-
   background-color: #65656566;
   width: 90%;
   height: 100%;
@@ -102,36 +120,50 @@ export const ContainerCard = styled.div`
   justify-content: center;
   gap: 1.4rem;
 
-    .icon {
-      /* background-color: #FFB2BB; */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .icon {
+    /* background-color: #FFB2BB; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .days {
+    h3 {
+      font-size: clamp(2.2rem, 8vw, 3rem);
+
+      font-weight: 800;
+      font-style: italic;
+
+      color: #ffb2bb;
+
+      line-height: 1;
     }
 
-    .days {
-      h3 {
-        font-size: 3rem;
-        font-weight: 800;
-        font-style: italic;
-        color: #FFB2BB;
-      }
-      p {
-        padding-top: 1rem;
-        font-size: 16px;
-        opacity: 0.8;
-        text-transform: capitalize;
-      }
-    }
+    p {
+      padding-top: 0.7rem;
 
-    .frases {
-      display: flex;
-      flex-direction: column;
-      color: #e5e7eb;
-      font-weight: 500;
-      font-size: .9rem;
-    }
+      font-size: clamp(0.85rem, 3vw, 1rem);
 
+      opacity: 0.8;
+
+      text-transform: capitalize;
+    }
+  }
+
+  .frases {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.3rem;
+
+    color: #e5e7eb;
+
+    font-weight: 500;
+
+    font-size: clamp(0.72rem, 2.8vw, 0.9rem);
+
+    text-align: center;
+
+    line-height: 1.5;
+  }
 `;
-
